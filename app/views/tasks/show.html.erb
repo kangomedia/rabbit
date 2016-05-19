@@ -1,9 +1,16 @@
-<h1><%= @task.title %></h1>
+<div id="jobs">
+	<div class="job">
+		<h1><%= @task.title %></h1>
+		<p><%= @task.description %></p>
+		<p><%= @task.company %></p>
+		<button class="btn btn-default">
+			<%= link_to 'Complete Task', @task.url %>
+		</button>
+	</div>
+</div>
 
-<p><%= @task.description %></p>
-
-<p><%= @task.company %></p>
-
-<%= link_to 'Back', root_path %>
-<%= link_to 'Edit', edit_task_path %>
-<%= link_to 'Delete', @task, method: :delete, data: {confirm: "Are you sure?"} %>
+<div id="links">
+	<%= link_to 'Back', root_path, class:'btn btn-sm btn-default' %>
+	<%= link_to 'Edit', edit_task_path, class:'btn btn-sm btn-default' %>
+	<%= link_to 'Delete', @task, method: :delete, data: {confirm: "Are you sure?"}, class:'btn btn-sm btn-default' %>
+</div>
